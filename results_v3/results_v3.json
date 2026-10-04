@@ -1,0 +1,536 @@
+{
+  "config": {
+    "preset": "full",
+    "EPOCHS": 15,
+    "SEEDS": [
+      0,
+      1,
+      2
+    ],
+    "poison_rate": 0.01,
+    "stress_rate": 0.1,
+    "alpha": 0.6,
+    "trigger_size": 5,
+    "target": 0,
+    "sanitize_plan": [
+      [
+        "spectral",
+        1.0
+      ],
+      [
+        "actclust",
+        1.0
+      ],
+      [
+        "random",
+        1.0
+      ]
+    ],
+    "det_mults": [
+      1.0,
+      2.0
+    ]
+  },
+  "main": [
+    {
+      "sig": {
+        "alpha": 0.6,
+        "size": 5,
+        "epochs": 15,
+        "rate": 0.01,
+        "target": 0,
+        "batch": 256,
+        "lr": 0.1,
+        "wd": 0.0005
+      },
+      "seed": 0,
+      "rate": 0.01,
+      "n_poison": 500,
+      "class_size": 5500,
+      "poison_share": 0.09090909090909091,
+      "ref": {
+        "acc": 0.916700005531311,
+        "asr_floor": 0.009000000543892384
+      },
+      "poisoned": {
+        "acc": 0.914900004863739,
+        "asr": 0.8872222304344177,
+        "fit": 0.9580000638961792
+      },
+      "detection": {
+        "mahalanobis": {
+          "auc": 0.8735288,
+          "sep": 0.8735288,
+          "ap": 0.42663445606479583,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.44,
+          "recall@1.0x": 0.44,
+          "prec@2.0x": 0.331,
+          "recall@2.0x": 0.662
+        },
+        "spectral": {
+          "auc": 0.9356864,
+          "sep": 0.9356864,
+          "ap": 0.8606500346766043,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.798,
+          "recall@1.0x": 0.798,
+          "prec@2.0x": 0.427,
+          "recall@2.0x": 0.854
+        },
+        "spectral_sign": {
+          "auc": 0.954146,
+          "sep": 0.954146,
+          "ap": 0.9069536204009038,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.846,
+          "recall@1.0x": 0.846,
+          "prec@2.0x": 0.458,
+          "recall@2.0x": 0.916
+        },
+        "lof": {
+          "auc": 0.42147480000000004,
+          "sep": 0.5785252,
+          "ap": 0.10784885923238452,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.142,
+          "recall@1.0x": 0.142,
+          "prec@2.0x": 0.112,
+          "recall@2.0x": 0.224
+        },
+        "actclust": {
+          "auc": 0.9820508,
+          "sep": 0.9820508,
+          "ap": 0.9481526532337343,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.908,
+          "recall@1.0x": 0.908,
+          "prec@2.0x": 0.474,
+          "recall@2.0x": 0.948
+        },
+        "fusion": {
+          "auc": 0.9615636000000001,
+          "sep": 0.9615636000000001,
+          "ap": 0.8218293568667615,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.738,
+          "recall@1.0x": 0.738,
+          "prec@2.0x": 0.454,
+          "recall@2.0x": 0.908
+        }
+      },
+      "info": {
+        "actclust": {
+          "cluster_sizes": [
+            387,
+            5113
+          ],
+          "ambiguous": false
+        },
+        "spectral_sign": {
+          "side_sizes": [
+            2007,
+            3493
+          ]
+        }
+      },
+      "students": [
+        {
+          "detector": "spectral",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 399,
+          "poison_recall": 0.798,
+          "acc": 0.9157999753952026,
+          "asr": 0.013777777552604675
+        },
+        {
+          "detector": "actclust",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 454,
+          "poison_recall": 0.908,
+          "acc": 0.9156999588012695,
+          "asr": 0.012555555440485477
+        },
+        {
+          "detector": "random",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 42,
+          "poison_recall": 0.084,
+          "acc": 0.9136999845504761,
+          "asr": 0.8595555424690247
+        }
+      ]
+    },
+    {
+      "sig": {
+        "alpha": 0.6,
+        "size": 5,
+        "epochs": 15,
+        "rate": 0.01,
+        "target": 0,
+        "batch": 256,
+        "lr": 0.1,
+        "wd": 0.0005
+      },
+      "seed": 1,
+      "rate": 0.01,
+      "n_poison": 500,
+      "class_size": 5500,
+      "poison_share": 0.09090909090909091,
+      "ref": {
+        "acc": 0.9196999669075012,
+        "asr_floor": 0.01066666655242443
+      },
+      "poisoned": {
+        "acc": 0.9150999784469604,
+        "asr": 0.8702222108840942,
+        "fit": 0.9040000438690186
+      },
+      "detection": {
+        "mahalanobis": {
+          "auc": 0.9076148,
+          "sep": 0.9076148,
+          "ap": 0.5825946525220371,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.548,
+          "recall@1.0x": 0.548,
+          "prec@2.0x": 0.375,
+          "recall@2.0x": 0.75
+        },
+        "spectral": {
+          "auc": 0.9372300000000002,
+          "sep": 0.9372300000000002,
+          "ap": 0.8865045042631462,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.84,
+          "recall@1.0x": 0.84,
+          "prec@2.0x": 0.441,
+          "recall@2.0x": 0.882
+        },
+        "spectral_sign": {
+          "auc": 0.9612027999999999,
+          "sep": 0.9612027999999999,
+          "ap": 0.9213267174094188,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.878,
+          "recall@1.0x": 0.878,
+          "prec@2.0x": 0.462,
+          "recall@2.0x": 0.924
+        },
+        "lof": {
+          "auc": 0.5060020000000001,
+          "sep": 0.5060020000000001,
+          "ap": 0.1628259779460296,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.21,
+          "recall@1.0x": 0.21,
+          "prec@2.0x": 0.152,
+          "recall@2.0x": 0.304
+        },
+        "actclust": {
+          "auc": 0.9930668,
+          "sep": 0.9930668,
+          "ap": 0.9700034917580131,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.922,
+          "recall@1.0x": 0.922,
+          "prec@2.0x": 0.492,
+          "recall@2.0x": 0.984
+        },
+        "fusion": {
+          "auc": 0.9733826,
+          "sep": 0.9733826,
+          "ap": 0.8689271496602083,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.776,
+          "recall@1.0x": 0.776,
+          "prec@2.0x": 0.46,
+          "recall@2.0x": 0.92
+        }
+      },
+      "info": {
+        "actclust": {
+          "cluster_sizes": [
+            409,
+            5091
+          ],
+          "ambiguous": false
+        },
+        "spectral_sign": {
+          "side_sizes": [
+            1860,
+            3640
+          ]
+        }
+      },
+      "students": [
+        {
+          "detector": "spectral",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 420,
+          "poison_recall": 0.84,
+          "acc": 0.9159999489784241,
+          "asr": 0.015111111104488373
+        },
+        {
+          "detector": "actclust",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 461,
+          "poison_recall": 0.922,
+          "acc": 0.9167999625205994,
+          "asr": 0.012555555440485477
+        },
+        {
+          "detector": "random",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 46,
+          "poison_recall": 0.092,
+          "acc": 0.91239994764328,
+          "asr": 0.8514444828033447
+        }
+      ]
+    },
+    {
+      "sig": {
+        "alpha": 0.6,
+        "size": 5,
+        "epochs": 15,
+        "rate": 0.01,
+        "target": 0,
+        "batch": 256,
+        "lr": 0.1,
+        "wd": 0.0005
+      },
+      "seed": 2,
+      "rate": 0.01,
+      "n_poison": 500,
+      "class_size": 5500,
+      "poison_share": 0.09090909090909091,
+      "ref": {
+        "acc": 0.9162999987602234,
+        "asr_floor": 0.011666666716337204
+      },
+      "poisoned": {
+        "acc": 0.9151999950408936,
+        "asr": 0.8770000338554382,
+        "fit": 0.9200000166893005
+      },
+      "detection": {
+        "mahalanobis": {
+          "auc": 0.9012804,
+          "sep": 0.9012804,
+          "ap": 0.5550019362016069,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.538,
+          "recall@1.0x": 0.538,
+          "prec@2.0x": 0.375,
+          "recall@2.0x": 0.75
+        },
+        "spectral": {
+          "auc": 0.8887044000000001,
+          "sep": 0.8887044000000001,
+          "ap": 0.8052770945477546,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.752,
+          "recall@1.0x": 0.752,
+          "prec@2.0x": 0.396,
+          "recall@2.0x": 0.792
+        },
+        "spectral_sign": {
+          "auc": 0.9133799999999999,
+          "sep": 0.9133799999999999,
+          "ap": 0.834050328306588,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.77,
+          "recall@1.0x": 0.77,
+          "prec@2.0x": 0.416,
+          "recall@2.0x": 0.832
+        },
+        "lof": {
+          "auc": 0.46631680000000003,
+          "sep": 0.5336832,
+          "ap": 0.16595110527439635,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.192,
+          "recall@1.0x": 0.192,
+          "prec@2.0x": 0.14,
+          "recall@2.0x": 0.28
+        },
+        "actclust": {
+          "auc": 0.9834588000000001,
+          "sep": 0.9834588000000001,
+          "ap": 0.9416551682008553,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.884,
+          "recall@1.0x": 0.884,
+          "prec@2.0x": 0.473,
+          "recall@2.0x": 0.946
+        },
+        "fusion": {
+          "auc": 0.9470270000000001,
+          "sep": 0.9470270000000001,
+          "ap": 0.7750963069057564,
+          "chance_ap": 0.09090909090909091,
+          "prec@1.0x": 0.688,
+          "recall@1.0x": 0.688,
+          "prec@2.0x": 0.429,
+          "recall@2.0x": 0.858
+        }
+      },
+      "info": {
+        "actclust": {
+          "cluster_sizes": [
+            389,
+            5111
+          ],
+          "ambiguous": false
+        },
+        "spectral_sign": {
+          "side_sizes": [
+            2211,
+            3289
+          ]
+        }
+      },
+      "students": [
+        {
+          "detector": "spectral",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 376,
+          "poison_recall": 0.752,
+          "acc": 0.9156000018119812,
+          "asr": 0.015888888388872147
+        },
+        {
+          "detector": "actclust",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 442,
+          "poison_recall": 0.884,
+          "acc": 0.9143999814987183,
+          "asr": 0.013222222216427326
+        },
+        {
+          "detector": "random",
+          "mult": 1.0,
+          "k": 500,
+          "poison_removed": 40,
+          "poison_recall": 0.08,
+          "acc": 0.9131999611854553,
+          "asr": 0.8641111254692078
+        }
+      ]
+    }
+  ],
+  "stress": {
+    "sig": {
+      "alpha": 0.6,
+      "size": 5,
+      "epochs": 15,
+      "rate": 0.1,
+      "target": 0,
+      "batch": 256,
+      "lr": 0.1,
+      "wd": 0.0005
+    },
+    "seed": 0,
+    "rate": 0.1,
+    "n_poison": 5000,
+    "class_size": 10000,
+    "poison_share": 0.5,
+    "ref": {
+      "acc": 0.916700005531311,
+      "asr_floor": 0.009000000543892384
+    },
+    "poisoned": {
+      "acc": 0.9103999733924866,
+      "asr": 0.9653333425521851,
+      "fit": 0.9753999710083008
+    },
+    "detection": {
+      "mahalanobis": {
+        "auc": 0.6272334799999999,
+        "sep": 0.6272334799999999,
+        "ap": 0.5901282848971885,
+        "chance_ap": 0.5,
+        "prec@1.0x": 0.5856,
+        "recall@1.0x": 0.5856,
+        "prec@2.0x": NaN,
+        "recall@2.0x": NaN
+      },
+      "spectral": {
+        "auc": 0.5366131199999999,
+        "sep": 0.5366131199999999,
+        "ap": 0.6687445161470879,
+        "chance_ap": 0.5,
+        "prec@1.0x": 0.5298,
+        "recall@1.0x": 0.5298,
+        "prec@2.0x": NaN,
+        "recall@2.0x": NaN
+      },
+      "spectral_sign": {
+        "auc": 0.9949462,
+        "sep": 0.9949462,
+        "ap": 0.9966253564635286,
+        "chance_ap": 0.5,
+        "prec@1.0x": 0.9828,
+        "recall@1.0x": 0.9828,
+        "prec@2.0x": NaN,
+        "recall@2.0x": NaN
+      },
+      "lof": {
+        "auc": 0.4381153199999999,
+        "sep": 0.5618846800000001,
+        "ap": 0.47353093550145386,
+        "chance_ap": 0.5,
+        "prec@1.0x": 0.4526,
+        "recall@1.0x": 0.4526,
+        "prec@2.0x": NaN,
+        "recall@2.0x": NaN
+      },
+      "actclust": {
+        "auc": 0.9980176399999999,
+        "sep": 0.9980176399999999,
+        "ap": 0.9984196845560271,
+        "chance_ap": 0.5,
+        "prec@1.0x": 0.985,
+        "recall@1.0x": 0.985,
+        "prec@2.0x": NaN,
+        "recall@2.0x": NaN
+      },
+      "fusion": {
+        "auc": 0.61668034,
+        "sep": 0.61668034,
+        "ap": 0.6854638693907955,
+        "chance_ap": 0.5,
+        "prec@1.0x": 0.5922,
+        "recall@1.0x": 0.5922,
+        "prec@2.0x": NaN,
+        "recall@2.0x": NaN
+      }
+    },
+    "info": {
+      "actclust": {
+        "cluster_sizes": [
+          4686,
+          5314
+        ],
+        "ambiguous": true
+      },
+      "spectral_sign": {
+        "side_sizes": [
+          4716,
+          5284
+        ]
+      }
+    },
+    "students": []
+  }
+}
